@@ -1,0 +1,42 @@
+.button {
+	margin: 1.5rem auto;
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+	width: 8rem;
+	height: 2rem;
+	border: 0.1rem solid;
+	border-radius: 0.5rem;
+	background-color: brown;
+}
+
+.button__name {
+
+	text-decoration: none;
+	color: white;
+	font-size: 1rem;
+}
+
+.button__name:hover {
+	text-decoration: none;
+	font-weight: 400;
+	color: burlywood;
+
+}
+
+.card {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1rem;
+	height: 8rem;
+	background-color: burlywood;
+	color: red;
+	border: 0.2rem coral solid;
+}
+
+.card__number {
+	font-size: 5rem;
+	opacity: 0;
+}
