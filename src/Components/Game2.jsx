@@ -3,8 +3,8 @@ import React, { Component } from "react";
 import style from "./CSS/Cards.module.css";
 import cardSet from "./CardsSet";
 import Cards from "./Cards";
-import { Container } from "react-bootstrap";
 
+let level;
 let gameArray = []; // массив значений 2 карточек для сравнения
 let gameCardId = []; // массив значени id 2 карточек для сравнения нажатия на разные карточки
 let gameCount = 0; // количество ходов (максимально 2 хода - далее сравнение значений карточек)
@@ -15,7 +15,6 @@ export default class Game2 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      level: localStorage.getItem("level"),
       cardSet: cardSet,
       count: 0,
       truePairs: 0,
@@ -87,7 +86,12 @@ export default class Game2 extends Component {
   };
 
   render() {
-    let currentCardsSet = Object.values(this.state.cardSet)[this.state.level];
+    if (!localStorage.getItem("level")) {
+      level = 0;
+    } else {
+      level = localStorage.getItem("level");
+    }
+    let currentCardsSet = Object.values(this.state.cardSet)[level];
     localStorage.setItem("cards", currentCardsSet);
 
     return (
