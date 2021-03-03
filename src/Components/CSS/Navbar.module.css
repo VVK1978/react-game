@@ -1,0 +1,19 @@
+.link {
+   font-weight: 400;
+   color: white;
+   text-decoration: none;
+   margin: 0 20px;
+}
+
+.link:hover {
+   font-weight: 400;
+   color: wheat;
+   text-decoration: none;
+
+}
+
+.selected {
+   font-weight: 400;
+   color: wheat;
+   text-decoration: none;
+}

@@ -1,0 +1,33 @@
+.game__options {
+	font-weight: 900;
+	font-size: 3rem;
+	margin: 1rem auto;
+	text-align: center;
+}
+
+.sound,
+.skill {
+	font-weight: 500;
+	font-size: 1.5rem;
+	margin: 1rem auto;
+}
+
+.options {
+	display: flex;
+	flex-direction: column;
+}
+
+.select {
+	margin: 0 auto;
+	width: 25%;
+	text-align: center;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+
+.button {
+	margin: 0 auto;
+	border-radius: 1rem;
+	width: 25%;
+}

@@ -1,0 +1,73 @@
+.container {
+	height: 100%;
+}
+
+.game__name {
+	padding: 5rem auto;
+	font-size: 10rem;
+	text-align: center;
+	color: blue;
+}
+
+.the__game {
+	font-size: 10rem;
+	text-align: center;
+	color: blue;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+	.game__name {
+		animation: game-name 4s;
+	}
+
+	.the__game {
+		animation: the-game 4.5s;
+	}
+}
+
+@keyframes game-name {
+	0% {
+		transform: scale(0.0, 0.0);
+		color: white;
+	}
+
+	100% {
+		transform: scale(1, 1);
+	}
+}
+
+@keyframes the-game {
+	0% {
+		transform: scale(0.1, 0.1);
+		color: white;
+	}
+
+	100% {
+		transform: scale(1, 1);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.game__name {
+		margin-top: 2.5rem;
+		padding: 5rem auto;
+		font-size: 6.7rem;
+		text-align: center;
+		color: blue;
+	}
+
+	.the__game {
+		font-size: 6.4rem;
+		text-align: center;
+		color: blue;
+	}
+}
+
+@media screen and (min-width:768px) and (max-width: 1000px) {
+
+	.the__game {
+		transform: 1s;
+		font-size: 9rem;
+	}
+}
