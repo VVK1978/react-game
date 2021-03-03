@@ -6,7 +6,12 @@ import Options from "./Components/Options";
 import Contacts from "./Components/Contacts";
 import LogIn from "./Components/Login";
 import FooterPage from "./Components/FooterPage";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import React, { Component } from "react";
 
 class App extends Component {
@@ -15,13 +20,14 @@ class App extends Component {
       <>
         <Router>
           <Header />
+          <Redirect />
           <Switch>
-            <Route exact={true} path="/" component={Home} />
-            <Route exact path="/newgame" component={Game} />
-            <Route exact path="/options" component={Options} />
-            <Route exact path="/contacts" component={Contacts} />
-            <Route exact path="/logIn" component={LogIn} />
-            <Route exact path="/game" component={Game2} />
+            <Route exact path="/" component={Home} />
+            <Route path="/newgame" component={Game} />
+            <Route path="/options" component={Options} />
+            <Route path="/contacts" component={Contacts} />
+            <Route path="/logIn" component={LogIn} />
+            <Route path="/game" component={Game2} />
           </Switch>
           <FooterPage />
         </Router>

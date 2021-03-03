@@ -2,14 +2,14 @@
 	height: 100%;
 }
 
-.game-name {
+.game__name {
 	padding: 5rem auto;
 	font-size: 10rem;
 	text-align: center;
 	color: blue;
 }
 
-.the-game {
+.the__game {
 	font-size: 10rem;
 	text-align: center;
 	color: blue;
@@ -17,11 +17,11 @@
 
 
 @media (prefers-reduced-motion: no-preference) {
-	.game-name {
+	.game__name {
 		animation: game-name 4s;
 	}
 
-	.the-game {
+	.the__game {
 		animation: the-game 4.5s;
 	}
 }
@@ -45,5 +45,29 @@
 
 	100% {
 		transform: scale(1, 1);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.game__name {
+		margin-top: 2.5rem;
+		padding: 5rem auto;
+		font-size: 6.7rem;
+		text-align: center;
+		color: blue;
+	}
+
+	.the__game {
+		font-size: 6.4rem;
+		text-align: center;
+		color: blue;
+	}
+}
+
+@media screen and (min-width:768px) and (max-width: 1000px) {
+
+	.the__game {
+		transform: 1s;
+		font-size: 9rem;
 	}
 }
