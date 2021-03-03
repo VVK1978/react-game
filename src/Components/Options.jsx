@@ -25,7 +25,6 @@ export default class Options extends Component {
       },
       () => {
         this.state.play ? this.audio.play() : this.audio.pause();
-        console.log(this.state);
       }
     );
   };
@@ -58,7 +57,6 @@ export default class Options extends Component {
                 backgroundColor: this.state.active === true ? "green" : "red",
               }}
             >
-              {console.log(this.state)}
 
               {this.state.play ? "Music On" : "Music Off"}
             </button>

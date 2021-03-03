@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import style from "./CSS/Game.module.css";
 import { Link } from "react-router-dom";
 import Cards from "./Cards";
 import cardSet from "./CardsSet";
+import style from "./CSS/Game.module.css";
 
 let level;
 
@@ -17,7 +17,6 @@ export default class Game extends Component {
     } else {
       level = localStorage.getItem("level");
     }
-    console.log(level);
     let currentCardsSet = Object.values(cardSet)[level];
     let opacity = 1;
     shuffle(currentCardsSet);

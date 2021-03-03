@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { Component } from "react";
-import style from "./CSS/Cards.module.css";
 import cardSet from "./CardsSet";
 import Cards from "./Cards";
+import style from "./CSS/Cards.module.css";
 
 let level;
 let gameArray = []; // массив значений 2 карточек для сравнения
@@ -29,29 +29,23 @@ export default class Game2 extends Component {
     let currentCount = this.state.count;
     currentCount++;
     this.setState({ count: currentCount });
-    //console.log(this.state.count);
   };
 
   cardChange = (id) => {
-    console.log(this.state.openCards);
     // Проверка на клик вне карточки
-    if (id != "") {
+    if (id !== "") {
       gameCardId.push(id);
-      //console.log(gameCardId);
       gameArray.push(localStorage.getItem("cards").split(",")[id]);
       gameCount++;
       //Проверка на 2 клик по одной и той же карточке
-      if (gameCount > 1 && gameCardId[0] == gameCardId[1]) {
-        //console.log("Ошибка ввода");
+      if (gameCount > 1 && gameCardId[0] === gameCardId[1]) {
         gameCardId.pop(id);
         gameArray.pop();
         gameCount--;
       } else {
-        if (gameCount == 2) {
-          //console.log("ввод верный");
+        if (gameCount === 2) {
           //Проверка на равно значений 2 открытых карточек и отрисовка не угадааных в красный цвет
-          if (gameArray[0] != gameArray[1]) {
-            //console.log("Вы не угадали");
+          if (gameArray[0] !== gameArray[1]) {
             element_0 = document.getElementById(gameCardId[0]);
             element_1 = document.getElementById(gameCardId[1]);
             element_0.classList.add(style.bad);
@@ -62,7 +56,7 @@ export default class Game2 extends Component {
             let currentOpenCards = this.state.openCards;
             currentOpenCards -= 2;
             this.setState({ openCards: currentOpenCards });
-            if (this.state.openCards == 2) {
+            if (this.state.openCards === 2) {
               this.setState({ gameOver: "GAME OVER" });
             }
           } else {
@@ -75,7 +69,7 @@ export default class Game2 extends Component {
             let currentOpenCards = this.state.openCards;
             currentOpenCards -= 2;
             this.setState({ openCards: currentOpenCards });
-            if (this.state.openCards == 2) {
+            if (this.state.openCards === 2) {
               this.setState({ gameOver: "GAME OVER" });
             }
           }
@@ -91,7 +85,9 @@ export default class Game2 extends Component {
     } else {
       level = localStorage.getItem("level");
     }
+
     let currentCardsSet = Object.values(this.state.cardSet)[level];
+
     localStorage.setItem("cards", currentCardsSet);
 
     return (
@@ -101,7 +97,7 @@ export default class Game2 extends Component {
         </div>
         <div>
           <p className={style.statistic}>
-            Ваши ходы - {this.state.count} Пар угадано- {this.state.truePairs}{" "}
+            Ваши ходы - {this.state.count} Пар угадано - {this.state.truePairs}{" "}
             {this.state.gameOver}
           </p>
         </div>
